@@ -5,7 +5,6 @@ import { MerchantService } from "../../../service/merchant.service";
 import { Address } from "../../../model/address";
 import { Phone } from "../../../model/phone";
 import { Email } from "../../../model/email";
-import {MessageService} from "primeng";
 
 @Component({
   selector: 'app-create-merchant',
@@ -17,9 +16,11 @@ export class CreateMerchantComponent implements OnInit {
   merchant: Merchant = new Merchant();
   submitted = false;
 
+  message: string;
+
   constructor(private merchantService: MerchantService,
-              private router: Router,
-              private messageService: MessageService) { }
+              private router: Router
+              ) { }
 
   ngOnInit() {
   }
@@ -54,7 +55,6 @@ export class CreateMerchantComponent implements OnInit {
     this.merchantService.createMerchant(this.merchant).subscribe(
       data => {
         console.log(data);
-        this.showSuccess("Success to create Merchant");
       },
       error => {
         console.error(error);
@@ -76,16 +76,6 @@ export class CreateMerchantComponent implements OnInit {
   gotoList() {
     this.router.navigate(['/merchant-list']);
   }
-
-  showSuccess(msg: string) {
-    this.messageService.add({severity: 'succes', summary: 'Success message', detail: msg});
-
-  }
-
-  showError(msg: string) {
-    this.messageService.add({severity: 'error', summary: 'Error message', detail: msg});
-  }
-
 
 
 }
