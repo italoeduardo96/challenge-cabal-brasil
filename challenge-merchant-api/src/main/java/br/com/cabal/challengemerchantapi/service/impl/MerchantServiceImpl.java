@@ -1,9 +1,15 @@
 package br.com.cabal.challengemerchantapi.service.impl;
 
+import br.com.cabal.challengemerchantapi.api.dto.address.AddressResponseDto;
+import br.com.cabal.challengemerchantapi.api.dto.email.EmailResponseDto;
 import br.com.cabal.challengemerchantapi.api.dto.merchant.MerchantRequestDto;
 import br.com.cabal.challengemerchantapi.api.dto.merchant.MerchantResponseDto;
+import br.com.cabal.challengemerchantapi.api.dto.phone.PhoneResponseDto;
 import br.com.cabal.challengemerchantapi.exception.RegisterNotFoundException;
+import br.com.cabal.challengemerchantapi.mapper.AddressMapper;
+import br.com.cabal.challengemerchantapi.mapper.EmailMapper;
 import br.com.cabal.challengemerchantapi.mapper.MerchantMapper;
+import br.com.cabal.challengemerchantapi.mapper.PhoneMapper;
 import br.com.cabal.challengemerchantapi.model.MerchantEntity;
 import br.com.cabal.challengemerchantapi.repository.MerchantRepository;
 import br.com.cabal.challengemerchantapi.service.MerchantService;
@@ -29,9 +35,30 @@ public class MerchantServiceImpl implements MerchantService {
     }
 
     @Override
-    public MerchantResponseDto getMerchantById(Integer id) {
-        return merchantRepository.findById(id).map( k -> MerchantMapper.INSTANCE.toResponseDto(k))
-                .orElseThrow( () -> new RegisterNotFoundException(MerchantEntity.class, "id", id.toString()));
+    public MerchantResponseDto getMerchant(Integer merchantId) {
+        return merchantRepository.findById(merchantId).map( k -> MerchantMapper.INSTANCE.toResponseDto(k))
+                .orElseThrow( () -> new RegisterNotFoundException(MerchantEntity.class, "merchantId", merchantId.toString()));
+    }
+
+    @Override
+    public AddressResponseDto getAddressMerchant(Integer merchantId) {
+        return merchantRepository.findById(merchantId).map(
+                k -> AddressMapper.INSTANCE.toResponseDTO(k.getAddress()))
+                .orElseThrow( () -> new RegisterNotFoundException(MerchantEntity.class, "id", merchantId.toString()));
+    }
+
+    @Override
+    public List<PhoneResponseDto> getPhonesMerchant(Integer merchantId) {
+        return merchantRepository.findById(merchantId).map(
+                k -> PhoneMapper.INSTANCE.toRequestDtoList(k.getPhones()))
+                .orElseThrow( () -> new RegisterNotFoundException(MerchantEntity.class, "id", merchantId.toString()));
+    }
+
+    @Override
+    public List<EmailResponseDto> getEmailsMerchant(Integer merchantId) {
+        return merchantRepository.findById(merchantId).map(
+                k -> EmailMapper.INSTANCE.toRequestDtoList(k.getEmails()))
+                .orElseThrow( () -> new RegisterNotFoundException(MerchantEntity.class, "id", merchantId.toString()));
     }
 
     @Override
@@ -40,13 +67,13 @@ public class MerchantServiceImpl implements MerchantService {
     }
 
     @Override
-    public void deleteMerchantById(Integer id) {
+    public void deleteMerchant(Integer id) {
         merchantRepository.findById(id).orElseThrow(() -> new RegisterNotFoundException(MerchantEntity.class, "id", id.toString()));
         merchantRepository.deleteById(id);
     }
 
     @Override
-    public MerchantResponseDto updateMerchantByDto(Integer id, MerchantRequestDto merchantRequestDto) {
+    public MerchantResponseDto updateMerchant(Integer id, MerchantRequestDto merchantRequestDto) {
 
         MerchantEntity merchantEntity = merchantRepository.findById(id).map(k -> {
 

@@ -32,7 +32,7 @@ public class MerchantEntity extends BaseEntity{
     private Date dtLastUpdate;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="cd_seq_merchant", insertable = false, updatable = false)
+    @JoinColumn(name="cd_seq_address")
     private AddressEntity address;
 
     @ManyToMany(cascade = CascadeType.ALL)
