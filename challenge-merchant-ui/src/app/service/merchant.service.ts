@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MerchantService {
 
-  private baseUrl = 'http://localhost:8080/challenge-merchant-api/api/v1/merchants/';
+  private baseUrl = `${environment.apiUrl}/challenge-merchant-api/api/v1/merchants`;
 
   constructor(private http: HttpClient) { }
 

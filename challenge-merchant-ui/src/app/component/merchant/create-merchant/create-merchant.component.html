@@ -1,1 +1,25 @@
-<p>create-merchant works!</p>
+<h3>Create Merchant</h3>
+<div [hidden]="submitted" style="width: 400px;">
+
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="nmMerchantID">Name</label>
+      <input type="text" class="form-control" id="nmMerchantID" required [(ngModel)]="merchant.nmMerchant" name="nmMerchant">
+    </div>
+
+    <div class="form-group">
+      <label for="nuDocumentID">Document</label>
+      <input type="text" class="form-control" id="nuDocumentID" required [(ngModel)]="merchant.nuDocument" name="nuDocument">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+
+  </form>
+
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>

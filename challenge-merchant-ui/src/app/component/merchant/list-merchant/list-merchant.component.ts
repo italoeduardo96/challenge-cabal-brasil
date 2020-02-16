@@ -26,7 +26,7 @@ export class ListMerchantComponent implements OnInit {
   }
 
   merchantDetail(id: number) {
-    this.router.navigate(['merchant-details', id]);
+    this.router.navigate(['/merchant-details', id]);
   }
 
   deleteMerchant(id: number) {
@@ -35,7 +35,7 @@ export class ListMerchantComponent implements OnInit {
         data => {
           this.getAllMerchants();
         },
-        error => console.log(error));
+        error => console.error(error));
   }
 
 }
