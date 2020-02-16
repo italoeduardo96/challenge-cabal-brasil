@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {Merchant} from "../../../model/merchant";
-import {MerchantService} from "../../../service/merchant.service";
+import { Merchant } from "../../../model/merchant";
+import { MerchantService } from "../../../service/merchant.service";
+import { Address } from "../../../model/address";
+import { Phone } from "../../../model/phone";
+import { Email } from "../../../model/email";
+import {MessageService} from "primeng";
 
 @Component({
   selector: 'app-create-merchant',
@@ -14,7 +18,8 @@ export class CreateMerchantComponent implements OnInit {
   submitted = false;
 
   constructor(private merchantService: MerchantService,
-              private router: Router) { }
+              private router: Router,
+              private messageService: MessageService) { }
 
   ngOnInit() {
   }
@@ -25,10 +30,39 @@ export class CreateMerchantComponent implements OnInit {
   }
 
   saveMerchant() {
+    let address = new Address();
+    address.cdCity = '11';
+    address.cdNeighborhood = '11';
+    address.cdUf = '11';
+    address.cdZipcode = '111111';
+    address.dsAddress = '1111';
+    address.nuAddress = '11';
+    address.dsComplement = '11';
+
+    let phone = new Phone();
+    phone.nuDdd = '11';
+    phone.nuPhone = '111111111';
+    phone.tpPhone = 'RESIDENCIAL';
+
+    let email = new Email();
+    email.dsEmail = 'italo@hot.com';
+
+    this.merchant.emails.push(email);
+    this.merchant.phones.push(phone);
+    this.merchant.address = address;
+
     this.merchantService.createMerchant(this.merchant).subscribe(
-      data => console.log(data),
-      error => console.error(error))
-    ;
+      data => {
+        console.log(data);
+        this.showSuccess("Success to create Merchant");
+      },
+      error => {
+        console.error(error);
+        if(error.error.status === 400){
+          console.log(error.error);
+        }
+      }
+    );
 
     this.merchant = new Merchant();
     this.gotoList();
@@ -42,5 +76,16 @@ export class CreateMerchantComponent implements OnInit {
   gotoList() {
     this.router.navigate(['/merchant-list']);
   }
+
+  showSuccess(msg: string) {
+    this.messageService.add({severity: 'succes', summary: 'Success message', detail: msg});
+
+  }
+
+  showError(msg: string) {
+    this.messageService.add({severity: 'error', summary: 'Error message', detail: msg});
+  }
+
+
 
 }

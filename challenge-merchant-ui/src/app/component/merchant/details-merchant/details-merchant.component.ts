@@ -26,7 +26,6 @@ export class DetailsMerchantComponent implements OnInit {
       data => {
         console.log(data);
         this.merchant = data as Merchant;
-        this.goToList();
       },
       error => console.error(error)
     );

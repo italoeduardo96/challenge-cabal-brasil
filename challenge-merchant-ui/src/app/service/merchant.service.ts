@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class MerchantService {
 
-  private baseUrl = `${environment.apiUrl}/challenge-merchant-api/api/v1/merchants`;
+  private baseUrl = `${environment.apiUrl}/api/v1/merchants`;
 
   constructor(private http: HttpClient) { }
 
