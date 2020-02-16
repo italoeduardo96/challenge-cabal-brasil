@@ -14,7 +14,7 @@
     <artifactId>challenge-merchant-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>challenge-merchant-api</name>
-    <description>Projeto tem como objetivo manter os dados de um comércio.</description>
+    <description>Projeto tem como objetivo manter os dados de um merchant.</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -25,7 +25,6 @@
         <org.mapstruct.version>1.2.0.Final</org.mapstruct.version>
         <io.springfox.version>2.8.0</io.springfox.version>
         <com.h2database.version>1.4.199</com.h2database.version>
-        <org.apache.commons.version>3.9</org.apache.commons.version>
     </properties>
 
     <dependencies>
@@ -71,12 +70,6 @@
             <artifactId>mapstruct</artifactId>
             <version>${org.mapstruct.version}</version>
             <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${org.apache.commons.version}</version>
         </dependency>
 
         <dependency>
