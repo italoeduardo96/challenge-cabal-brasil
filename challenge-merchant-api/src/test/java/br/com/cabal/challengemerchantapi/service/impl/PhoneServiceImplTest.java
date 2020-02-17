@@ -32,7 +32,6 @@ public class PhoneServiceImplTest {
     @Mock
     private PhoneMapper phoneMapper;
 
-
     @Test
     public void updatePhonesById() {
         Optional<PhoneEntity> optional = getPhoneEntity();

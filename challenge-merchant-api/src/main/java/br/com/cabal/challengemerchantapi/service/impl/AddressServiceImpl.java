@@ -22,13 +22,6 @@ public class AddressServiceImpl implements AddressService {
     }
 
     @Override
-    public AddressResponseDto getAddressById(Integer addressId) {
-        return addressRepository.findById(addressId)
-                .map(k -> addressMapper.toResponseDTO(k))
-                .orElseThrow(() -> new RegisterNotFoundException(AddressEntity.class, "id", addressId.toString()));
-    }
-
-    @Override
     public AddressResponseDto updateAddressById(Integer addressId, AddressRequestDto addressRequestDto) {
 
         AddressEntity addressEntity = addressRepository.findById(addressId)

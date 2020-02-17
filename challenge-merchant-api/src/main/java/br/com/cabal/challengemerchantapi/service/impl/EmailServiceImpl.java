@@ -22,13 +22,6 @@ public class EmailServiceImpl implements EmailService {
     }
 
     @Override
-    public EmailResponseDto getEmailById(Integer emailId) {
-        return emailRepository.findById(emailId)
-                .map( k -> emailMapper.toResponseDto(k))
-                .orElseThrow( () -> new RegisterNotFoundException(EmailEntity.class, "id", emailId.toString()));
-    }
-
-    @Override
     public EmailResponseDto updateEmailById(Integer emailId, EmailRequestDto emailRequestDto) {
 
         EmailEntity emailEntity = emailRepository.findById(emailId).map(k -> {
@@ -41,12 +34,6 @@ public class EmailServiceImpl implements EmailService {
         }).orElseThrow(() -> new RegisterNotFoundException(EmailEntity.class, "id", emailId.toString()));
 
         return saveAndReturnDTO(emailEntity);
-    }
-
-    @Override
-    public void deleteEmailById(Integer emailId) {
-        emailRepository.findById(emailId).orElseThrow(() -> new RegisterNotFoundException(EmailEntity.class, "id", emailId.toString()));
-        emailRepository.deleteById(emailId);
     }
 
     private EmailResponseDto saveAndReturnDTO(EmailEntity emailEntity) {

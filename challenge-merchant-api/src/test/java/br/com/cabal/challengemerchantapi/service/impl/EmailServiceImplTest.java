@@ -36,27 +36,12 @@ public class EmailServiceImplTest {
     private EmailMapper emailMapper;
 
     @Test
-    public void getEmailById() {
-        when(emailRepository.findById(1)).thenReturn(getEmailEntity());
-        when(this.emailMapper.toResponseDto(any())).thenReturn(getEmailResponseDto());
-
-        assertThat(emailService.getEmailById(1)).isNotNull();
-    }
-
-    @Test
     public void updateEmailById() {
         Optional<EmailEntity> optional = getEmailEntity();
         when(this.emailRepository.findById(1)).thenReturn(optional);
         emailService.updateEmailById(1, new EmailRequestDto());
 
         verify(emailRepository).save(optional.get());
-    }
-
-    @Test
-    public void deleteEmailById() {
-        when(emailRepository.findById(1)).thenReturn(getEmailEntity());
-        emailService.deleteEmailById(1);
-        verify(emailRepository).deleteById(1);
     }
 
     private Optional<EmailEntity> getEmailEntity(){

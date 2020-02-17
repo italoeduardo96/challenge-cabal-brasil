@@ -34,14 +34,6 @@ public class AddressServiceImplTest {
     private AddressMapper addressMapper;
 
     @Test
-    public void getAddressById() {
-        when(addressRepository.findById(1)).thenReturn(getAddressEntity());
-        when(this.addressMapper.toResponseDTO(any())).thenReturn(getAddressResponseDto());
-
-        assertThat(addressService.getAddressById(1)).isNotNull();
-    }
-
-    @Test
     public void updateAddressById() {
         Optional<AddressEntity> optional = getAddressEntity();
         when(addressRepository.findById(1)).thenReturn(optional);
