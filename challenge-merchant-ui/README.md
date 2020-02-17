@@ -1,7 +1,7 @@
 
 # CHALLENGE-MERCHANT-API
 
-> Este projeto tem como objetivo disponibilizar uma interface grafica para o consumo de uma API RESST que cuida dos dados de merchant.
+> Este projeto tem como objetivo disponibilizar uma interface grafica para o consumo de uma API REST que cuida dos dados de merchant.
 
 ## Como é executado
 
