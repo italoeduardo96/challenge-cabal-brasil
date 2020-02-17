@@ -4,7 +4,7 @@ Repositório criado para a publicação do código fonte que será critério par
 
 * A solução está separada em dois projetos:
     * challenge-merchant-api
-    * challenge-merchant-ui
+    * challenge-merchant-ui 
     
 #### challenge-merchant-api
 > Projeto rest responsável por manter os dados do comércio via api rest.
