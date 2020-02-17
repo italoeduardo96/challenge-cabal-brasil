@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="56c2eb90-2587-4dc7-bed6-a988c01b9768" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/challenge-merchant-ui" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15527344" />
+    <property name="project.structure.side.proportion" value="0.3275463" />
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="E2E Tests (challenge-merchant-ui)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/challenge-merchant-ui/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/challenge-merchant-ui/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="500" y="128" key="FileChooserDialogImpl" timestamp="1581969018172">
+      <screen x="0" y="0" width="1440" height="870" />
+    </state>
+    <state x="500" y="128" key="FileChooserDialogImpl/0.0.1440.870@0.0.1440.870" timestamp="1581969018172" />
+    <state x="385" y="133" width="702" height="602" key="NewModule_or_Project.wizard" timestamp="1581969021490">
+      <screen x="0" y="0" width="1440" height="870" />
+    </state>
+    <state x="385" y="133" width="702" height="602" key="NewModule_or_Project.wizard/0.0.1440.870@0.0.1440.870" timestamp="1581969021490" />
+    <state x="200" y="9" key="SettingsEditor" timestamp="1581969030000">
+      <screen x="0" y="0" width="1440" height="870" />
+    </state>
+    <state x="200" y="9" key="SettingsEditor/0.0.1440.870@0.0.1440.870" timestamp="1581969030000" />
+  </component>
+</project>
