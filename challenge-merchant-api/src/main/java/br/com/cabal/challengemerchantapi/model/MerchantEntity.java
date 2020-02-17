@@ -1,6 +1,9 @@
 package br.com.cabal.challengemerchantapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -35,28 +38,12 @@ public class MerchantEntity extends BaseEntity{
     @JoinColumn(name="cd_seq_address")
     private AddressEntity address;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name="TB_MERCHANT_PHONE", schema = "CORE"
-            , joinColumns={
-            @JoinColumn(name="CD_SEQ_MERCHANT")
-    }
-            , inverseJoinColumns={
-            @JoinColumn(name="CD_SEQ_PHONE")
-    }
-    )
+    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
     private List<PhoneEntity> phones;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name="TB_MERCHANT_EMAIL", schema = "CORE"
-            , joinColumns={
-            @JoinColumn(name="CD_SEQ_MERCHANT")
-    }
-            , inverseJoinColumns={
-            @JoinColumn(name="CD_SEQ_EMAIL")
-    }
-    )
+    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<EmailEntity> emails;
 
     @PrePersist

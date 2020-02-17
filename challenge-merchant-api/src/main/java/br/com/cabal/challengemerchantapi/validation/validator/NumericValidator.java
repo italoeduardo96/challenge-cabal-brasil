@@ -1,9 +1,6 @@
 package br.com.cabal.challengemerchantapi.validation.validator;
 
-import br.com.cabal.challengemerchantapi.util.CnpjUtils;
-import br.com.cabal.challengemerchantapi.validation.CnpjValidation;
 import br.com.cabal.challengemerchantapi.validation.NumericValidation;
-import org.springframework.util.NumberUtils;
 import org.springframework.util.StringUtils;
 
 import javax.validation.ConstraintValidator;

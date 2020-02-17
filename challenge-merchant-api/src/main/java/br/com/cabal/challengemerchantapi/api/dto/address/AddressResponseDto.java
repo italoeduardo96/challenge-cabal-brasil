@@ -1,6 +1,7 @@
 package br.com.cabal.challengemerchantapi.api.dto.address;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class AddressResponseDto {

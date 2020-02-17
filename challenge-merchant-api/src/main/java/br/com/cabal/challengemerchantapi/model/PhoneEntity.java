@@ -38,10 +38,6 @@ public class PhoneEntity extends BaseEntity{
     @Temporal(TemporalType.TIMESTAMP)
     private Date dtLastUpdate;
 
-    @JsonIgnore
-    @ManyToMany(mappedBy="phones")
-    private List<MerchantEntity> merchants;
-
     @PrePersist
     public void prePersist() {
         setDtInsert(new Date());
@@ -53,19 +49,11 @@ public class PhoneEntity extends BaseEntity{
         setDtLastUpdate(new Date());
     }
 
-    public List<MerchantEntity> getMerchants() {
-        return merchants;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public void setId(Integer cdSeqPhone) {
-        this.id = cdSeqPhone;
-    }
-
-    public void setMerchants(List<MerchantEntity> merchants) {
-        this.merchants = merchants;
-    }
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

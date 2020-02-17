@@ -1,12 +1,11 @@
 package br.com.cabal.challengemerchantapi.util;
 
 /**
- * Ccodigo de validação de CPF retirado da fonte:
+ * Codigo de validação de CPF retirado da fonte:
  * http://desenvolvedor.ninja/dica-validacao-de-cpf-e-cnpj-no-java/
  *
  */
 public class CnpjUtils {
-    private static final int[] pesoCPF = {11, 10, 9, 8, 7, 6, 5, 4, 3, 2};
     private static final int[] pesoCNPJ = {6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2};
 
     public static boolean isValid(String cnpj) {
@@ -21,10 +20,6 @@ public class CnpjUtils {
         }
         soma = 11 - soma % 11;
         return soma > 9 ? 0 : soma;
-    }
-
-    private static String padLeft(String text, char character) {
-        return String.format("%11s", text).replace(' ', character);
     }
 
     private static boolean isValidCNPJ(String cnpj) {

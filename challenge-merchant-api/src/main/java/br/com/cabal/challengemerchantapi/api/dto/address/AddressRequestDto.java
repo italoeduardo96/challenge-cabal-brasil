@@ -23,7 +23,6 @@ public class AddressRequestDto {
 
     @Size(max = 100)
     @NotBlank(groups = CreateMerchantValidationInterface.class)
-    @NumericValidation
     private String cdCity;
 
     @Size(max = 100)
@@ -32,7 +31,6 @@ public class AddressRequestDto {
 
     @Size(max = 100)
     @NotBlank(groups = CreateMerchantValidationInterface.class)
-    @NumericValidation
     private String cdNeighborhood;
 
     @Size(max = 100)

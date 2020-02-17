@@ -2,6 +2,7 @@ package br.com.cabal.challengemerchantapi.api.dto.phone;
 
 import br.com.cabal.challengemerchantapi.enums.PhoneTypeEnum;
 import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class PhoneResponseDto {
