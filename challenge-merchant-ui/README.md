@@ -1,27 +1,54 @@
-# ChallengeMerchantUi
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
+# CHALLENGE-MERCHANT-API
 
-## Development server
+> Este projeto tem como objetivo disponibilizar uma interface grafica para o consumo de uma API RESST que cuida dos dados de merchant.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Como é executado
 
-## Code scaffolding
+>O projeto pode ser executado via linha de comando, entre na pasta raiz do projeto 'challenge-merchant-ui'
+e siga os comandos abaixo:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1 - É necessário que se tenha o Node.js instalado na máquina.
+Cheque as versões com os comandos abaixo.
+```
+node -v
+v10.16.0
 
-## Build
+npm -v
+6.9.0
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+2 - O projeto utiliza Angular CLI para inicializar e desenvolver o projeto,
+caso não tenha instalado, execute os comandos abaixo para instalar:
+```
+npm install -g @angular/cli
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2 - O projeto utiliza Angular CLI para inicializar e desenvolver o projeto,
+caso não tenha instalado, execute os comandos abaixo para instalar:
+```
+npm install -g @angular/cli
+```
 
-## Running end-to-end tests
+3 - Atualize as dependências do npm:
+```
+npm install
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+4 - Entre no diretorio do projeto '/challenge-merchant-ui', e execute o comando:
+```
+ng serve
+```
 
-## Further help
+5 - Navegue para `http://localhost:4200/`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Variaveis de ambiente
+
+> Dentro do arquivo 'environments.ts' se encontra as variáveis de ambiente ncessárias.
+> EM abiente de desenvolvimento se contra os valores abaixo:
+```
+  apiUrl: 'http://localhost:8080'
+  apiWhitelisted: 'localhost:8080'
+```
